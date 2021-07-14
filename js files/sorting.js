@@ -72,19 +72,19 @@ Array_size.addEventListener('input',function(){
 
 
 let array=[];
-let delay=140;
+let delay=250;
 
 let delayElement = document.querySelector('#arr_speed');
 
 delayElement.addEventListener('input',function(){
-    delay = 320 - parseInt(delayElement.value);
-})
+    delay = 300 - parseInt(delayElement.value);
+});
 
 //default array call
 createNewArray();
 
 //creating new array
-function createNewArray(n=70,isreverse=false){
+function createNewArray(n=50,isreverse=false){
 
     //deleting old bars
     deleteChild();
@@ -144,4 +144,4 @@ reverseArray.addEventListener("click",function(){
     enablingsortbtn();
     enableSizeSlider();
    createNewArray(Array_size.value,true); 
-})
+});

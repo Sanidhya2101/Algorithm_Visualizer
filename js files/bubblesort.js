@@ -6,15 +6,21 @@ async function bubble_sort()
     {
         for(let j=0;j<element.length-i-1;j++)
         {
+            
             element[j].style.background='yellow';
             element[j+1].style.background='yellow';
-
+            await waitforme(delay);
             if(parseInt(element[j].style.height)>parseInt(element[j+1].style.height))
             {
+                
+                element[j].style.background='red';
+                element[j+1].style.background='red';
                 await waitforme(delay);
                 swap(element[j],element[j+1]);
+
             }
 
+            await waitforme(delay);
             element[j].style.background='coral';
             element[j+1].style.background='coral';
 
@@ -38,4 +44,4 @@ bubblesort_btn.addEventListener('click',async function(){
     enablingsortbtn();
     enableSizeSlider();
     enableNewArrayBtn();
-})
+});
