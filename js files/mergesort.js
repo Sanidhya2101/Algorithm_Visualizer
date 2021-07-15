@@ -1,6 +1,7 @@
 
 async function merge(ele,start,mid,end)
 {
+    
     const n1 = mid-start+1;
     const n2= end-mid;
 
@@ -104,6 +105,9 @@ async function merge_sort(ele,start,end)
     return;
 
     const mid = start + Math.floor((end-start)/2);
+
+    await waitforme(delay);
+    ele[mid].style.background='blue';
 
     await merge_sort(ele,start,mid);
     await merge_sort(ele,mid+1,end);

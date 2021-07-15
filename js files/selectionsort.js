@@ -18,22 +18,23 @@ async function selection_sort()
             {
                 if(min_index!==i)
                 {
-                    ele[min_index].style.background='coral';
+                    ele[min_index].style.background='#1E90FF';
                 }
                 min_index=j;
             }
             
             else
-            ele[j].style.background='coral';
+            ele[j].style.background='#1E90FF';
         }
 
         await waitforme(delay);
-
+        ele[min_index].style.background='red';
+        ele[i].style.background='red';
         swap(ele[min_index],ele[i]);
         
         await waitforme(delay);
 
-        ele[min_index].style.background='coral';
+        ele[min_index].style.background='#1E90FF';
 
         ele[i].style.background='green';
 

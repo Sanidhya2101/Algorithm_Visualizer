@@ -108,7 +108,7 @@ function createNewArray(n=50,isreverse=false){
     for(let i=0;i<n;i++)
     {
         const bar=document.createElement("div");
-        bar.style=" margin:0% " + 0.1 + "%; background-color:coral; width:" + (100/n-(2*0.1)) + "%; height:" + (array[i]*5) + "px;";
+        bar.style=" margin:0% " + 0.1 + "%; background-color:#1E90FF; width:" + (100/n-(2*0.1)) + "%; height:" + (array[i]*5) + "px;";
         
         bar.classList.add('bar');
         bar.classList.add('flex-item');

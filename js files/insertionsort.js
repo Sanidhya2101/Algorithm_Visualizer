@@ -10,15 +10,17 @@ async function insertion_sort()
 
         let key=ele[i].style.height;
 
-        ele[i].style.background='purple';
+        ele[i].style.background='red';
 
         await waitforme(delay);
 
         while(j>=0 && (parseInt(ele[j].style.height)>parseInt(key)))
         {
-            ele[j].style.background='purple';
+            ele[i].style.background='green';
+
+            ele[j].style.background='red';
             
-            ele[j+1].style.height = ele[j].style.height;
+            swap(ele[j+1],ele[j]);
             j--;
 
             await waitforme(delay);

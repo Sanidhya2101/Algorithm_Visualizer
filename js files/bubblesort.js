@@ -21,8 +21,8 @@ async function bubble_sort()
             }
 
             await waitforme(delay);
-            element[j].style.background='coral';
-            element[j+1].style.background='coral';
+            element[j].style.background='#1E90FF';
+            element[j+1].style.background='#1E90FF';
 
         }
 
