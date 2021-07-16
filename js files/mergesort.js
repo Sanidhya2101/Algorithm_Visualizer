@@ -107,7 +107,7 @@ async function merge_sort(ele,start,end)
     const mid = start + Math.floor((end-start)/2);
 
     await waitforme(delay);
-    ele[mid].style.background='blue';
+    ele[mid].style.background='#FF1493';
 
     await merge_sort(ele,start,mid);
     await merge_sort(ele,mid+1,end);
