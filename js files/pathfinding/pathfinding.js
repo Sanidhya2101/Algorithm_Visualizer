@@ -1,6 +1,5 @@
 
 
-
 let started;
 let algo;
 let startButton;
@@ -18,7 +17,6 @@ let source;
 let destination;
 let sourceSelected;
 let destinationSelected;
-
 
 function resetCanvas()
 {
@@ -105,7 +103,7 @@ function resetCanvas()
     {
         for(let j=0;j<rows;j++)
         {
-            graph[i][j].show(255);
+            graph[i][j].show("white");
         }
     }
 
@@ -124,7 +122,7 @@ function clear_Canvas()
         for(let j=0;j<rows;j++)
         {
             if(graph[i][j]!=source && graph[i][j]!=destination)
-            graph[i][j].show(255);
+            graph[i][j].show("white");
         }
     }
 }
@@ -188,7 +186,7 @@ class Node {
 
         this.clicked = () => {
             if (sourceSelected) {
-                this.show("greenyellow");
+                this.show("green");
             }
             else if (destinationSelected) {
                 this.show("red");
@@ -196,11 +194,6 @@ class Node {
             else if (!this.obstacle) {
                 this.obstacle = true;
                 this.show("grey");
-            }
-            else
-            {
-                this.obstacle=false;
-                this.show(255);
             }
         };
     }
@@ -224,7 +217,7 @@ function windowResized()
 
 function centerCanvas()
 {
-    var x = ((windowWidth)-width)/2;
+    var x = ((windowWidth)-width)/3;
     var y = ((windowHeight-(windowHeight*0.20))-height)/2;
 
     screen.position(x,y);
@@ -232,7 +225,7 @@ function centerCanvas()
 
 function setup()
 {
-    screen  = createCanvas(windowWidth-(windowHeight*0.05),windowHeight-(windowHeight*0.20));
+    screen  = createCanvas(windowWidth-(windowHeight*0.15),windowHeight-(windowHeight*0.20));
     screen.parent("sketch01");
     
     centerCanvas();
@@ -467,7 +460,7 @@ function draw()
         {
             for(let j=0;j<rows;j++)
             {
-                graph[i][j].show(255, 192, 203);
+                graph[i][j].show("white");
             }
         }
 
@@ -626,14 +619,14 @@ function mouseDragged()
 
                 if(sourceSelected)
                 {
-                    source.show(255);
+                    source.show("white");
                     source=graph[i][j];
                     graph[i][j].clicked();
                 }
 
                 if(destinationSelected)
                 {
-                    destination.show(255);
+                    destination.show("white");
                     destination=graph[i][j];
                     graph[i][j].clicked();
                 }

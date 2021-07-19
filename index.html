@@ -5,79 +5,245 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithm Visualizer</title>
+    
 
+    <link rel="stylesheet" href="sorting.css"> 
+    
+    <script defer type="text/javascript" src="js files/sorting/sorting.js"></script> 
+      
+    
+
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+
+
+        
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    
+        
+    <script type="text/javascript" src="js files/pathfinding/pathfinding.js"></script>
+                
 
 </head>
 
 
+<body style="background-color: #ADD8E6;">
 
-<header class="tab-content" id="sort-content">
-            
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="sorting.css">
-    <nav class="navbar navbar-expand-lg navbar-light bg-black">
-        <div class="container justify-content-center">
-            <ul class="navbar-nav">
-                <li><h1><strong>Sorting Visualizer</strong></h1></li>
-                
-            </ul>
-        </div>
-        <div>    
-            <ul class="navbar-nav justify-content-center">
-                <li style="margin-right: 50px;"><button class="btn btn-dark my-2 my-sm-0" id="startButton" type="submit" href="pathfinding.html">Pathfinder</button></li>
-            </ul>
-        </div>
-    </nav>
+    
+    <ul class="nav nav-tabs nav-justified" id="tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link text-dark active"
+            id="sorting"
+            data-toggle="tab"
+            href="#sorting-algorithm-tab"
+            role="tab"
+            aria-controls="ex3-tabs-1"
+            aria-selected="true">Sorting Algorithm</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a
+            class="nav-link text-dark"
+            id="path-finder"
+            data-toggle="tab"
+            href="#pathfinding-algorithm-tab"
+            role="tab"
+            aria-controls="ex3-tabs-2"
+            aria-selected="false">Pathfinding Algorithm</a>
+        </li>
+    </ul>
 
-    <nav id="nav_bar">
-        <div class="row">
-            <div class="col gap-2 d-sm-flex" id="new_Array">
-                <button type="button" class="btn btn-outline-success btn-dark newArray">Generate Array</button>
-                
-                <button type="button" class="btn btn-outline-success btn-dark reverseArray">Reverse Array</button>
-            </div>
-            
-            <div class="col" id="input">
-                <span id="array_size">Size of Array:
-                    <input id="arr_size" type="range" min="10" max="100" step=1 value=50>
-                </span>
-                <span id="array_speed">Speed:
-                    <input id="arr_speed" type="range" min="10" max="250" stepDown=10 value=50>
-                </span>
-            </div>
-            
-            <div class="col gap-2 d-sm-flex justify-content-end margin-right-20">
-                <button type="button" class="btn-outline-primary btn-dark bubbleSort">Bubble</button>
-                <button type="button" class="btn-outline-primary btn-dark insertionSort">Insertion</button>
-                <button type="button" class="btn-outline-primary btn-dark selectionSort">Selection</button>
-                <button type="button" class="btn-outline-primary btn-dark mergeSort">Merge</button>
-                <button type="button" class="btn-outline-primary btn-dark quickSort">Quick</button>
-            </div>
-            
-        </div>
-    </nav>
+    <div class="tab-content" id="ex2-content">
+        <div
+            class="tab-pane fade show active"
+            style="background-color: black; padding: 10px;"
+            id="sorting-algorithm-tab"
+            role="tabpanel"
+            aria-labelledby="ex3-tab-1">
+            <header class="tab-content" id="sort-content">
+                    
 
-</header>
-
-<body class="p-3 mb-3 text-white">
-
-
-            
-
-        <div id="bars" class="flex-container"></div>
-
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-            <script src="js files/sorting/sorting.js"></script>
+                <nav id="nav_bar">
+                    <div class="row" style="padding: 10px;">
+                        <div class="col gap-2 d-sm-flex" id="new_Array">
+                            <button type="button" class="btn btn-outline-success btn-dark newArray">Generate Array</button>
+                            
+                            <button type="button" class="btn btn-outline-success btn-dark reverseArray">Reverse Array</button>
+                        </div>
+                        
+                        <div class="col" id="input">
+                            <span id="array_size">Size of Array:
+                                <input id="arr_size" type="range" min="10" max="100" step=1 value=50>
+                            </span>
+                            <span id="array_speed">Speed:
+                                <input id="arr_speed" type="range" min="10" max="250" stepDown=10 value=50>
+                            </span>
+                        </div>
+                        
+                        <div class="col gap-2 d-sm-flex justify-content-end margin-right-20">
+                            <button type="button" class="btn-outline-primary btn-dark bubbleSort">Bubble</button>
+                            <button type="button" class="btn-outline-primary btn-dark insertionSort">Insertion</button>
+                            <button type="button" class="btn-outline-primary btn-dark selectionSort">Selection</button>
+                            <button type="button" class="btn-outline-primary btn-dark mergeSort">Merge</button>
+                            <button type="button" class="btn-outline-primary btn-dark quickSort">Quick</button>
+                        </div>
+                        
+                    </div>
+                </nav>
+        
+            </header>
+        
+            <body class="p-3 mb-3 text-white ">
+        
+            <div id="bars" class="flex-container"></div>
+        
             <script src="js files/sorting/bubblesort.js"></script>
             <script src="js files/sorting/insertionsort.js"></script>
             <script src='js files/sorting/selectionsort.js'></script>
             <script src='js files/sorting/mergesort.js'></script>
-            <script src='js files/sorting/quicksort.js'></script>
+            <script src='js files/sorting/quicksort.js'></script>       
+                   
+              
+            </body>
+        </div>
+        
+        <div
+            class="tab-pane fade"
+            style="background-color: white;"
+            id="pathfinding-algorithm-tab"
+            role="tabpanel"
+            aria-labelledby="ex3-tab-2">
 
+
+            <body style="font-family: 'Raleway', sans-serif; background-color:white;">
+
+                
+                <div class="container-fluid w-100 m-0 p-0" style="height: 100vh;">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light text-dark">
+                        <div class="container">
+                            <h3 ><strong>Path Finder</strong></h3>
                         
+                
+
+                            <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto  nav-fill w-100 align-items-center">
+                                    <li class="nav-item dropdown active">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            Algorithms
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#" onclick="dropdown(event)">Dijkstra</a>
+                                            <a class="dropdown-item" href="#" onclick="dropdown(event)">A* Search</a>
+                                            <a class="dropdown-item" href="#" onclick="dropdown(event)">Breadth First Search</a>
+                                            <a class="dropdown-item" href="#" onclick="dropdown(event)">Depth First Search</a>  
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <button class="btn btn-dark my-2 my-sm-0" id="startButton" type="submit">Start</button>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#" onclick="createmaze()">Create Maze<span class="sr-only">(current)</span></a>
+                                    </li>
+
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#" onclick="resetCanvas()">Clear<span class="sr-only">(current)</span></a>
+                                    </li>
+                                    
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#" onclick="clear_Canvas()">Reset<span class="sr-only">(current)</span></a>
+                                    </li>
+
+                                </ul> 
+                            </div>
+                        </div>
+                    </nav>
+
+
+                    <div class="container-fluid pt-4 pb-0">
+                        <div class="row text-center text-dark" style="font-size: 23px;">
+                            <div class="col-sm-6 col-md">
+                                <div>
+                                    <span class="square" style="height:20px; width:20px; background-color: green; display:inline-block;"></span>
+                                    Source
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md">
+                                <div>
+                                    <span class="square" style="height:20px; width:20px; background-color: red; display:inline-block;"></span>
+                                    Destination
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md">
+                                <div>
+                                    <span class="square" style="height:20px; width:20px; background-color: grey; display:inline-block;"></span>
+                                    Walls
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-sm-6 col-md">
+                                <div>
+                                    <span class="square" style="height:20px; width:20px; background-color: #1E90FF; display:inline-block;"></span>
+                                    Unexplored
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md">
+                                <div>
+                                    <span class="square" style="height:20px; width:20px; background-color: rgba(0, 0, 255 , 0.4); display:inline-block;"></span>
+                                    Explored
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md">
+                                <div>
+                                    <span class="square" style="height:5px; width:30px; background-color: #FF1493; display:inline-block;"></span>
+                                    Path
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>   
+
+                    <div id="sketch01" style="position: relative;" > </div>
+
+                </div>
+
+                
+                
+
+
+            </body>
+
+        </div>
+
+    </div>
+
+    
+
 </body>
-
-
+    
 
 
 </html>
