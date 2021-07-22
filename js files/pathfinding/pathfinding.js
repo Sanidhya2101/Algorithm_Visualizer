@@ -125,6 +125,8 @@ function clear_Canvas()
             graph[i][j].show("white");
         }
     }
+    
+    startButton.disabled=false;
 }
 
 class Node {
