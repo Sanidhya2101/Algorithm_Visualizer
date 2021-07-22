@@ -22,5 +22,13 @@ You can view this project by clicking on this [Link](https://sanidhya2101.github
 </ul>
 
 
+<h3>Future Chnages</h3>
+<ul>
+  <li>Heap Sort and other Sorting Algorithm</li>
+  <li>More Pathfinding Algorithm</li>
+  <li>Tree and Graph Visualiser</li>
+
+</ul>
+
 
 
