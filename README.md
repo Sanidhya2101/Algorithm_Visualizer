@@ -3,7 +3,7 @@
 This project is developed using javascript, html and CSS.
 You can view this project by clicking on this [Link](https://sanidhya2101.github.io/Algorithm_Visualizer/).
 
-### Sorting Agorithm
+## Sorting Agorithm
 <ul>
   <li>Bubble Sort</li>
   <li>Selection Sort</li>
@@ -13,7 +13,7 @@ You can view this project by clicking on this [Link](https://sanidhya2101.github
 </ul>
 
 
-### Pathfinding Agorithm
+## Pathfinding Agorithm
 <ul>
   <li>Dijkstra</li>
   <li>A star Search</li>
@@ -21,14 +21,21 @@ You can view this project by clicking on this [Link](https://sanidhya2101.github
   <li>Depth First Search</li>
 </ul>
 
-### ScreenShots
+## ScreenShots
 
 <div>
-  <img src="./Image/Screenshot 2021-07-22 234442.png" alt="Sorting" height="700dp">
+  <img src="./Image/Screenshot 2021-07-22 234442.png" alt="Sorting" height="400dp">
 </div>
 
+---
 
-<h3>Future Chnages</h3>
+<div>
+  <img src="./Image/Screenshot 2021-07-22 234622.png" alt="Sorting" height="400dp">
+</div>
+
+---
+
+## Future Chnages
 <ul>
   <li>Heap Sort and other Sorting Algorithm</li>
   <li>More Pathfinding Algorithm</li>
